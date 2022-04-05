@@ -2,7 +2,7 @@ import React,{Fragment} from 'react';
 import{View, Image, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import{Ionicons} from '@expo/vector-icons';
 
-export default function Botao({Logo,texto,cor,Logo2,texto2,cor2}){
+export default function Botao({Logo,texto,cor,Logo2,texto2,cor2,}){
     return(
         <View style={estilo.containerBotoes1}>
             <TouchableOpacity style={[estilo.botoes , {backgroundColor:cor}]}>
