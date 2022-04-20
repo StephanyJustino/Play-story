@@ -4,6 +4,10 @@ import Cabecalho from "./src/components/cabecalho";
 import Botao from "./src/components/botao";
 import JOGOS from "./dados/componentes/jogos";
 import Jogos from "./dados/componentes/componente";
+import Titulo from "./src/components/titulo";
+import Lancamentos from "./src/components/lancamentos";
+import DadosLancamentos from "./dados/dadosLancamentos";
+
 
 export default function App() {
   return (
@@ -23,9 +27,9 @@ export default function App() {
         cor="green"
         Logo2="musical-notes"
         texto2 = "Musicas"
-        cor2 = "orange"
-        
+        cor2 = "orange" 
       />
+      
       <Botao
       Logo="book-outline"
       texto="Filmes"
@@ -50,7 +54,30 @@ export default function App() {
 
         )}
         />
+          <View>
+          <Titulo
+            titulo =  "Próximos Lançamentos"
+          />
+        </View>
+        <View>
+          <FlatList
+          horizontal={true}
+          data= {DadosLancamentos}
+          keyExtractor = {(item) => item.id}
+          renderItem = { ({ item }) => (
+          
+          <Lancamentos
+          titulo ={item.nome}
+          imagem = {item.imagem}
+          valor = {item.valor}
+          />
+          
+          )}
+        />
+      
+        </View>
       </View>
      </View>
+     
   );
 }
